@@ -1,0 +1,31 @@
+{
+  "name": "PLUGIN_NAME",
+  "version": "0.0.0",
+  "description": "PostCSS plugin PLUGIN_DESC",
+  "keywords": [
+    "postcss",
+    "css",
+    "postcss-plugin"
+  ],
+  "author": "AUTHOR_NAME <AUTHOR_EMAIL>",
+  "license": "MIT",
+  "repository": "GITHUB_NAME/PLUGIN_NAME",
+  "bugs": {
+    "url": "https://github.com/GITHUB_NAME/PLUGIN_NAME/issues"
+  },
+  "homepage": "https://github.com/GITHUB_NAME/PLUGIN_NAME",
+  "dependencies": {
+    "chai": "^3.4.1",
+    "gulp": "3.9.0",
+    "gulp-eslint": "^1.1.0",
+    "gulp-mocha": "^2.2.0",
+    "postcss": "^5.0.10"
+  },
+  "devDependencies": {
+    "ava": "^0.4.2",
+    "eslint": "^1.9.0"
+  },
+  "scripts": {
+    "test": "gulp test"
+  }
+}
