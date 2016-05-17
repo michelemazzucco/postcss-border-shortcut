@@ -7,21 +7,15 @@ PostCSS plugin for assign default border type if not expressed
 [ci]:      https://travis-ci.org/michelemazzucco/postcss-border-shortcut
 
 ```css
-.your-class {
+/* Before */
+
+.one {
   border: 1px #E7E7E7;
 }
-```
 
-```css
-.your-class {
+/* After */
+
+.two {
   border: 1px solid #E7E7E7;
 }
 ```
-
-## Usage
-
-```js
-postcss([ require('postcss-border-shortcut') ])
-```
-
-See [PostCSS] docs for examples for your environment.
