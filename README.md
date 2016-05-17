@@ -1,6 +1,6 @@
 # postcss-border-shortcut [![Build Status][ci-img]][ci]
 
-PostCSS plugin for assign default border type if not expressed
+PostCSS plugin for assign default border type if not expressed.
 
 [PostCSS]: https://github.com/postcss/postcss
 [ci-img]:  https://travis-ci.org/michelemazzucco/postcss-border-shortcut.svg
