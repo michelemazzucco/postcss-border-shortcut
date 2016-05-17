@@ -1,19 +1,22 @@
 {
-  "name": "PLUGIN_NAME",
-  "version": "0.0.0",
-  "description": "PostCSS plugin PLUGIN_DESC",
+  "name": "postcss-border-shortcut",
+  "version": "0.0.1",
+  "description": "PostCSS plugin for assign default border type if not expressed",
   "keywords": [
     "postcss",
     "css",
-    "postcss-plugin"
+    "postcss-plugin",
+    "border",
+    "shortcut",
+    "border-type"
   ],
-  "author": "AUTHOR_NAME <AUTHOR_EMAIL>",
+  "author": "Michele Mazzucco <hello@michelemazzucco.it>",
   "license": "MIT",
-  "repository": "GITHUB_NAME/PLUGIN_NAME",
+  "repository": "michelemazzucco/postcss-border-shortcut",
   "bugs": {
-    "url": "https://github.com/GITHUB_NAME/PLUGIN_NAME/issues"
+    "url": "https://github.com/michelemazzucco/postcss-border-shortcut/issues"
   },
-  "homepage": "https://github.com/GITHUB_NAME/PLUGIN_NAME",
+  "homepage": "https://github.com/michelemazzucco/postcss-border-shortcut",
   "dependencies": {
     "chai": "^3.4.1",
     "gulp": "3.9.0",
@@ -21,11 +24,8 @@
     "gulp-mocha": "^2.2.0",
     "postcss": "^5.0.10"
   },
-  "devDependencies": {
-    "ava": "^0.4.2",
-    "eslint": "^1.9.0"
-  },
   "scripts": {
-    "test": "gulp test"
+    "test": "gulp test",
+    "lint": "gulp lint"
   }
 }

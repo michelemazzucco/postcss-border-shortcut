@@ -16,20 +16,20 @@ var test = function (input, output, opts, done) {
 describe('postcss-border-shortcut', function () {
   it('add border types to border property', function (done) {
     test(
-      'span { border: 1px red; }',
-      'span { border: 1px solid red; }',
+      'div { border: 1px red; }',
+      'div { border: 1px solid red; }',
       {}, done);
   });
   it('add border types to border top property', function (done) {
     test(
-      'span { border-top: 1px green; }',
-      'span { border-top: 1px solid green; }',
+      'div { border-top: 1px green; }',
+      'div { border-top: 1px solid green; }',
       {}, done);
   });
   it('not change other CSS rules', function (done) {
     test(
-      'span { display: inline-block; width: 100%; }',
-      'span { display: inline-block; width: 100%; }',
+      'div { display: inline-block; width: 100%; }',
+      'div { display: inline-block; width: 100%; }',
       {}, done);
   });
 });
