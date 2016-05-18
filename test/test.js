@@ -20,10 +20,17 @@ describe('postcss-border-shortcut', function () {
       'div { border: 1px solid red; }',
       {}, done);
   });
+
   it('add border types to border top property', function (done) {
     test(
       'div { border-top: 1px green; }',
       'div { border-top: 1px solid green; }',
+      {}, done);
+  });
+  it('not edit decl of other types of border property', function (done) {
+    test(
+      'div { border-style: solid; border-color: green; border-width: 2px; }',
+      'div { border-style: solid; border-color: green; border-width: 2px; }',
       {}, done);
   });
   it('not change other CSS rules', function (done) {
