@@ -1,5 +1,4 @@
 var gulp = require('gulp');
-
 var files = ['index.js', 'test/*.js', 'gulpfile.js'];
 
 gulp.task('lint', function () {
