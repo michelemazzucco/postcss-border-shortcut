@@ -13,9 +13,17 @@ PostCSS plugin for assign default border type if not expressed.
   border: 1px #E7E7E7;
 }
 
+.two {
+  border-top: 1px #707C80;
+}
+
 /* After */
 
-.two {
+.one {
   border: 1px solid #E7E7E7;
+}
+
+.two {
+  border-top: 1px solid #707C80;
 }
 ```
