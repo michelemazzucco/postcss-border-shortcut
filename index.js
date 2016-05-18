@@ -5,10 +5,10 @@ module.exports = postcss.plugin('postcss-border-shortcut', function (opts) {
 
   return function (css) {
     css.walkDecls( function (decl) {
-      var borderRegex = /^(?!.*(style|width|color)).*border.*$/;
-      var pxRegex = /^((?!px).)*$/;
+      var borderRegExp = /^(?!.*(style|width|color)).*border.*$/;
+      var pxRegExp = /^((?!px).)*$/;
 
-      if (decl.prop.match(borderRegex)) {
+      if (decl.prop.match(borderRegExp)) {
         var valueList = postcss.list.space(decl.value);
         var prop = decl.prop;
         var FirstValue = valueList[0];
@@ -17,7 +17,7 @@ module.exports = postcss.plugin('postcss-border-shortcut', function (opts) {
         if (valueList.length == 2) {
           LastValue = valueList[1];
           decl.replaceWith(prop + ':' + FirstValue + ' solid ' + LastValue);
-        } else if (valueList.length == 1 && FirstValue.match(pxRegex)) {
+        } else if (valueList.length == 1 && FirstValue.match(pxRegExp)) {
           LastValue = FirstValue;
           decl.replaceWith(prop + ': 1px solid ' + LastValue);
         }
