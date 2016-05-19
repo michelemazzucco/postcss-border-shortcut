@@ -28,10 +28,42 @@ PostCSS plugin for assign default border type if not expressed.
 }
 
 .two {
-  border-top: 1px solid #707C80;  
+  border-top: 1px solid #707C80;
 }
 
 .three {
   border-bottom: 1px solid #423424;
 }
 ```
+
+## Installation
+```
+$ npm install postcss-border-shortcut --save-dev
+```
+
+## Usage
+
+### JS API
+```js
+var postcss = require('postcss');
+postcss([ require('postcss-border-shortcut') ])
+```
+
+### Gulp
+```js
+var gulp = require('gulp')
+    , postcss = require('gulp-postcss')
+    , border = require('postcss-border-shortcut');
+
+gulp.task('css', function () {
+  var processors = [
+    border
+  ];
+
+  return gulp.src('./src/*.css')
+    .pipe(postcss(processors))
+    .pipe(gulp.dest('./dest'));
+});
+```
+
+See [PostCSS] docs for examples for your environment.
