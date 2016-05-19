@@ -1,3 +1,5 @@
+/* eslint-env node, mocha */
+
 var postcss = require('postcss');
 var expect  = require('chai').expect;
 
