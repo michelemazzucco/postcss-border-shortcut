@@ -22,7 +22,7 @@
     "gulp": "3.9.0",
     "gulp-eslint": "^1.1.0",
     "gulp-mocha": "^2.2.0",
-    "postcss": "^5.0.10"
+    "postcss": "^5.0.21"
   },
   "scripts": {
     "test": "gulp test",
