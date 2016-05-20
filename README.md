@@ -43,12 +43,6 @@ $ npm install postcss-border-shortcut --save-dev
 
 ## Usage
 
-### JS API
-```js
-var postcss = require('postcss');
-postcss([ require('postcss-border-shortcut') ])
-```
-
 ### Gulp
 ```js
 var gulp = require('gulp')
@@ -66,4 +60,10 @@ gulp.task('css', function () {
 });
 ```
 
-See [PostCSS] docs for examples for your environment.
+### JS API
+```js
+var postcss = require('postcss');
+postcss([ require('postcss-border-shortcut') ])
+```
+
+See [PostCSS](https://github.com/postcss/postcss) docs for other examples.
