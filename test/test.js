@@ -34,10 +34,10 @@ describe('postcss-border-shortcut', function () {
       'div { border: 1px solid green; border-bottom: 1px solid #423424; }',
       {}, done);
   });
-  it('not edit decl of other types of border property', function (done) {
+  it('not edit decl of other types of border property or border radius', function (done) {
     test(
-      'div { border-style: solid; border-color: green; border-width: 2px; }',
-      'div { border-style: solid; border-color: green; border-width: 2px; }',
+      'div { border-style: solid; border-color: green; border-radius: 5px; }',
+      'div { border-style: solid; border-color: green; border-radius: 5px; }',
       {}, done);
   });
   it('not change other CSS rules', function (done) {

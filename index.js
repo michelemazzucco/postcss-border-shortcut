@@ -14,6 +14,8 @@ module.exports = postcss.plugin('postcss-border-shortcut', function (opts) {
         var FirstValue = valueList[0];
         var LastValue = valueList[2];
 
+        //console.log(valueList[1]);
+
         if (valueList.length === 2) {
           LastValue = valueList[1];
           decl.replaceWith(prop + ':' + FirstValue + ' solid ' + LastValue);
