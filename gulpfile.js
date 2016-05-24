@@ -14,8 +14,8 @@ gulp.task('test', function () {
   .pipe(mocha());
 });
 
-gulp.task('default', ['test']);
-
 gulp.task('watch', function () {
   gulp.watch(files, ['test']);
 });
+
+gulp.task('default', ['test']);
