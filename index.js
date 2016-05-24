@@ -2,25 +2,27 @@ var postcss = require('postcss');
 
 module.exports = postcss.plugin('postcss-border-shortcut', function (opts) {
   opts = opts || {};
+  var type = opts.borderType || 'solid';
 
   return function (css) {
     css.walkDecls( function (decl) {
       var borderRegExp = /^(?!.*(style|width|color|radius)).*border.*$/,
-          unitRegExp = /^(?!.*(px|rem|em|%)).*$/;
+          unitRegExp = /^(?!.*(px|rem|em|%)).*$/,
+          valueList = postcss.list.space(decl.value),
+          prop = decl.prop,
+          firstValue = valueList[0],
+          lastValue = valueList[2],
+          result = '';
 
-      if (decl.prop.match(borderRegExp)) {
-        var valueList = postcss.list.space(decl.value),
-            prop = decl.prop,
-            firstValue = valueList[0],
-            lastValue = valueList[2];
-
-        if (valueList.length === 1 && firstValue.match(unitRegExp) && firstValue.length >= 2) {
+      if (decl.prop.match(borderRegExp) && firstValue.length >= 2) {
+        if (valueList.length === 1 && firstValue.match(unitRegExp)) {
           lastValue = firstValue;
-          decl.replaceWith(prop + ': 1px solid ' + lastValue);
+          result = prop + ': 1px ' + type + ' ' + lastValue;
         } else if (valueList.length === 2) {
           lastValue = valueList[1];
-          decl.replaceWith(prop + ':' + firstValue + ' solid ' + lastValue);
+          result = prop + ': ' + firstValue + ' ' + type + ' ' + lastValue;
         }
+        decl.replaceWith(result);
       }
     });
   };
