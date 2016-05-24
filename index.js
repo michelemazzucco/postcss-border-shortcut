@@ -9,17 +9,17 @@ module.exports = postcss.plugin('postcss-border-shortcut', function (opts) {
       var unitRegExp = /^(?!.*(px|rem|em|%)).*$/;
 
       if (decl.prop.match(borderRegExp)) {
-        var valueList = postcss.list.space(decl.value);
-        var prop = decl.prop;
-        var FirstValue = valueList[0];
-        var LastValue = valueList[2];
+        var valueList = postcss.list.space(decl.value),
+            prop = decl.prop,
+            firstValue = valueList[0],
+            lastValue = valueList[2];
 
-        if (valueList.length === 1 && FirstValue.match(unitRegExp) && FirstValue.length >= 2) {
-          LastValue = FirstValue;
-          decl.replaceWith(prop + ': 1px solid ' + LastValue);
+        if (valueList.length === 1 && firstValue.match(unitRegExp) && firstValue.length >= 2) {
+          lastValue = firstValue;
+          decl.replaceWith(prop + ': 1px solid ' + lastValue);
         } else if (valueList.length === 2) {
-          LastValue = valueList[1];
-          decl.replaceWith(prop + ':' + FirstValue + ' solid ' + LastValue);
+          lastValue = valueList[1];
+          decl.replaceWith(prop + ':' + firstValue + ' solid ' + lastValue);
         }
       }
     });
