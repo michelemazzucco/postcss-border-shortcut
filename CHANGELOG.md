@@ -1,3 +1,7 @@
+# 0.0.3
+* Add options, now you can choose the default border type
+* Small refactoring on code
+
 # 0.0.2
 * Add border radius from "untouchable" properties
 * Remove issue with border with value of `0`

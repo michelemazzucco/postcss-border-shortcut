@@ -67,3 +67,16 @@ postcss([ require('postcss-border-shortcut') ])
 ```
 
 See [PostCSS](https://github.com/postcss/postcss) docs for other examples.
+
+## Options
+### borderType
+Type: `string` Default: `solid`
+
+You can define a default `border`style property, like: `solid`, `dashed`, `dotted`,  `double`, ect...
+
+```js
+// Set in build tool, etc.
+.border({
+  // options
+})
+```

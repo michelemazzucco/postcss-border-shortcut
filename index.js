@@ -2,7 +2,7 @@ var postcss = require('postcss');
 
 module.exports = postcss.plugin('postcss-border-shortcut', function (opts) {
   opts = opts || {};
-  var type = opts.type || 'solid';
+  var type = opts.borderType || 'solid';
 
   return function (css) {
     css.walkDecls( function (decl) {
