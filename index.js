@@ -6,7 +6,8 @@ module.exports = postcss.plugin('postcss-border-shortcut', function (opts) {
   return function (css) {
     css.walkDecls( function (decl) {
       var borderRegExp = /^(?!.*(style|width|color|radius)).*border.*$/,
-          unitRegExp = /^(?!.*(px|rem|em|%)).*$/;
+          unitRegExp = /^(?!.*(px|rem|em|%)).*$/,
+          finalResult = '';
 
       if (decl.prop.match(borderRegExp)) {
         var valueList = postcss.list.space(decl.value),
@@ -16,10 +17,12 @@ module.exports = postcss.plugin('postcss-border-shortcut', function (opts) {
 
         if (valueList.length === 1 && firstValue.match(unitRegExp) && firstValue.length >= 2) {
           lastValue = firstValue;
-          decl.replaceWith(prop + ': 1px ' + type + lastValue);
+          finalResult = decl.replaceWith(prop + ': 1px ' + type + lastValue);
+          return finalResult;
         } else if (valueList.length === 2) {
           lastValue = valueList[1];
-          decl.replaceWith(prop + ':' + firstValue + type + lastValue);
+          finalResult = decl.replaceWith(prop + ':' + firstValue + type + lastValue)
+          return finalResult;
         }
       }
     });
