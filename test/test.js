@@ -24,8 +24,8 @@ describe('postcss-border-shortcut', function () {
   });
   it('add border types to border top property', function (done) {
     test(
-      'div { border-top: 1px green; }',
-      'div { border-top: 1px solid green; }',
+      '.class { border-top: 1px green; }',
+      '.class { border-top: 1px solid green; }',
       {}, done);
   });
   it('works with only color property', function (done) {
@@ -36,8 +36,14 @@ describe('postcss-border-shortcut', function () {
   });
   it('not edit decl of other types of border property', function (done) {
     test(
-      'div { border-style: solid; border-color: green; }',
-      'div { border-style: solid; border-color: green; }',
+      '.class { border-style: solid; border-color: green; }',
+      '.class { border-style: solid; border-color: green; }',
+      {}, done);
+  });
+  it('not change complete border declaration and with only size expressed', function (done) {
+    test(
+      'div { border-bottom: red dashed 10px; border: 42em; }',
+      'div { border-bottom: red dashed 10px; border: 42em; }',
       {}, done);
   });
   it('not change other CSS rules or border with value of 0', function (done) {
