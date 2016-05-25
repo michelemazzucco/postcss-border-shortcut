@@ -77,6 +77,6 @@ You can define a default `border`style property, like: `solid`, `dashed`, `dotte
 ```js
 // Set in build tool, etc.
 .border({
-  // options
+  borderType: 'dashed'
 })
 ```
