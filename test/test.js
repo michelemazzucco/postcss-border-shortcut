@@ -40,7 +40,8 @@ describe('postcss-border-shortcut', function () {
       '.class { border-style: solid; border-color: green; }',
       {}, done);
   });
-  it('not change complete border declaration and with only size expressed', function (done) {
+  it('not change complete border declaration' +
+      'and with only size expressed', function (done) {
     test(
       'div { border-bottom: red dashed 10px; border: 42em; }',
       'div { border-bottom: red dashed 10px; border: 42em; }',
