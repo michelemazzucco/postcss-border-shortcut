@@ -21,10 +21,15 @@
     "chai": "^3.4.1",
     "eslint": "^2.10.2",
     "mocha": "^2.5.3",
-    "postcss": "^5.0.21"
+    "postcss": "^5.0.21",
+    "eslint-config-postcss": "^2.0.2"
   },
   "scripts": {
-    "test": "mocha test/*.js",
+    "start": "mocha && eslint *.js",
+    "test": "mocha",
     "lint": "eslint *.js"
+  },
+  "eslintConfig": {
+    "extends": "eslint-config-postcss/es5"
   }
 }
