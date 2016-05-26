@@ -25,9 +25,9 @@
     "eslint-config-postcss": "^2.0.2"
   },
   "scripts": {
-    "start": "mocha && eslint *.js",
+    "start": "mocha && eslint .",
     "test": "mocha",
-    "lint": "eslint *.js"
+    "lint": "eslint ."
   },
   "eslintConfig": {
     "extends": "eslint-config-postcss/es5"
