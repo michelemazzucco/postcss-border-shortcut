@@ -18,11 +18,12 @@ module.exports = postcss.plugin('postcss-border-shortcut', function (opts) {
         if (valueList.length === 1 && firstValue.match(unitRegExp)) {
           lastValue = firstValue;
           res = '1px ' + type + ' ' + lastValue;
+          decl.replaceWith(prop + res);
         } else if (valueList.length === 2) {
           lastValue = valueList[1];
           res = firstValue + ' ' + type + ' ' + lastValue;
+          decl.replaceWith(prop + res);
         }
-        decl.replaceWith(prop + res);
       }
     });
   };
