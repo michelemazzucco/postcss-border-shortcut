@@ -19,13 +19,17 @@
   "homepage": "https://github.com/michelemazzucco/postcss-border-shortcut",
   "dependencies": {
     "chai": "^3.4.1",
-    "gulp": "3.9.0",
-    "gulp-eslint": "^1.1.0",
-    "gulp-mocha": "^2.2.0",
-    "postcss": "^5.0.21"
+    "eslint": "^2.10.2",
+    "mocha": "^2.5.3",
+    "postcss": "^5.0.21",
+    "eslint-config-postcss": "^2.0.2"
   },
   "scripts": {
-    "test": "gulp test",
-    "lint": "gulp lint"
+    "start": "mocha && eslint .",
+    "test": "mocha",
+    "lint": "eslint ."
+  },
+  "eslintConfig": {
+    "extends": "eslint-config-postcss/es5"
   }
 }
