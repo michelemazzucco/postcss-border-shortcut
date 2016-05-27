@@ -1,4 +1,4 @@
-# postcss-border-shortcut [![Build Status][ci-img]][ci] [![NPM Version](npm-img)](npm)
+# postcss-border-shortcut [![Build Status][ci-img]][ci] [![NPM Version][npm-img]](npm)
 
 PostCSS plugin for assign default border type if not expressed.
 
