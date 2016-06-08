@@ -1,3 +1,6 @@
+# 0.0.4
+* Ignore `border-collapse` and `border-spacing` properties
+
 # 0.0.3
 * Add options, now you can choose the default border type
 * Small refactoring on code
