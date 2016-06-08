@@ -6,7 +6,7 @@ module.exports = postcss.plugin('postcss-border-shortcut', function (opts) {
 
   return function (css) {
     css.walkDecls( function (decl) {
-      var borderRegExp = /^(?!.*(style|width|color|radius)).*border.*$/,
+      var borderRegExp = /^(?!.*(style|width|color|radius|collapse|spacing)).*border.*$/,
           unitRegExp = /^(?!.*(px|rem|em|%)).*$/,
           valueList = postcss.list.space(decl.value),
           prop = decl.prop + ': ',
