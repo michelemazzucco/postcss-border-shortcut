@@ -36,8 +36,8 @@ describe('postcss-border-shortcut', function () {
   });
   it('not edit decl of other types of border property', function (done) {
     test(
-      '.class { border-style: solid; border-spacing: 1%; }',
-      '.class { border-style: solid; border-spacing: 1%; }',
+      '.class { border-style: solid; border-collapse: separate; }',
+      '.class { border-style: solid; border-collapse: separate; }',
       {}, done);
   });
   it('not change complete border declaration' +
