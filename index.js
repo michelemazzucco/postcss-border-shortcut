@@ -6,16 +6,16 @@ module.exports = postcss.plugin('postcss-border-shortcut', function (opts) {
 
   return function (css) {
     css.walkDecls( function (decl) {
-      var borderRegExp = /^(?!.*(style|width|color|radius|collapse|spacing)).*border.*$/,
-          unitRegExp = /^(?!.*(px|rem|em|%)).*$/,
+      var borderRx = /^(?!.*(style|width|color|radius|collapse|spacing)).*border.*$/, // eslint-disable-line max-len
+          unitRx = /^(?!.*(px|rem|em|%)).*$/,
           valueList = postcss.list.space(decl.value),
           prop = decl.prop + ': ',
           firstValue = valueList[0],
           lastValue = valueList[2],
           res = '';
 
-      if (decl.prop.match(borderRegExp) && firstValue.length >= 2) {
-        if (valueList.length === 1 && firstValue.match(unitRegExp)) {
+      if (decl.prop.match(borderRx) && firstValue.length >= 2) {
+        if (valueList.length === 1 && firstValue.match(unitRx)) {
           lastValue = firstValue;
           res = '1px ' + type + ' ' + lastValue;
           decl.replaceWith(prop + res);
