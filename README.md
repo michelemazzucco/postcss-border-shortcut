@@ -1,4 +1,4 @@
-# postcss-border-shortcut [![Build Status][ci-img]][ci] [![NPM Version][npm-img]](npm)
+# postcss-border-shortcut [![Build Status][ci-img]][ci] [![NPM Version][npm-img]](npm) [![Dependency Status][david-dm-img]](david-dm)
 
 PostCSS plugin for assign default border type if not expressed.
 
@@ -62,7 +62,7 @@ var postcss = require('postcss');
 postcss([ require('postcss-border-shortcut') ])
 ```
 
-See `PostCSS` docs for other examples.
+See [PostCSS](PostCSS) docs for other examples.
 
 ## Options
 ### borderType
@@ -82,3 +82,5 @@ You can define a default `border`style property, like: `solid`, `dashed`, `dotte
 [ci]:      https://travis-ci.org/michelemazzucco/postcss-border-shortcut
 [npm]:     https://www.npmjs.com/package/postcss-debug
 [npm-img]: https://img.shields.io/npm/v/postcss-border-shortcut.svg
+[david-dm]: https://david-dm.org/michelemazzucco/postcss-border-shortcut
+[david-dm-img]: https://david-dm.org/michelemazzucco/postcss-border-shortcut.svg
