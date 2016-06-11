@@ -1,4 +1,4 @@
-# postcss-border-shortcut [![Build Status][ci-img]][ci] [![NPM Version][npm-img]](npm) [![Dependency Status][david-dm-img]](david-dm)
+# postcss-border-shortcut [![Build Status][ci-img]][ci] [![NPM Version][npm-img]][npm] [![Dependency Status][david-dm-img]][david-dm]
 
 PostCSS plugin for assign default border type if not expressed.
 
@@ -62,7 +62,7 @@ var postcss = require('postcss');
 postcss([ require('postcss-border-shortcut') ])
 ```
 
-See [PostCSS](PostCSS) docs for other examples.
+See [PostCSS] docs for other examples.
 
 ## Options
 ### borderType
