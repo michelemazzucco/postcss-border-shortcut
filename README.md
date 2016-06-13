@@ -77,10 +77,10 @@ You can define a default `border`style property, like: `solid`, `dashed`, `dotte
 })
 ```
 
-[PostCSS]: https://github.com/postcss/postcss
-[ci-img]:  https://travis-ci.org/michelemazzucco/postcss-border-shortcut.svg
-[ci]:      https://travis-ci.org/michelemazzucco/postcss-border-shortcut
-[npm]:     https://www.npmjs.com/package/postcss-debug
-[npm-img]: https://img.shields.io/npm/v/postcss-border-shortcut.svg
-[david-dm]: https://david-dm.org/michelemazzucco/postcss-border-shortcut
+[PostCSS]:      https://github.com/postcss/postcss
+[ci-img]:       https://travis-ci.org/michelemazzucco/postcss-border-shortcut.svg
+[ci]:           https://travis-ci.org/michelemazzucco/postcss-border-shortcut
+[npm]:          https://www.npmjs.com/package/postcss-border-shortcut
+[npm-img]:      https://img.shields.io/npm/v/postcss-border-shortcut.svg
+[david-dm]:     https://david-dm.org/michelemazzucco/postcss-border-shortcut
 [david-dm-img]: https://david-dm.org/michelemazzucco/postcss-border-shortcut.svg
