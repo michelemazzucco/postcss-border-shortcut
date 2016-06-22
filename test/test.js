@@ -47,10 +47,16 @@ describe('postcss-border-shortcut', function () {
       'div { border-bottom: red dashed 10px; border: 42em; }',
       {}, done);
   });
+  it('not change border with value of 0 or none', function (done) {
+    test(
+      'div { border: 0; border-top: none; }',
+      'div { border: 0; border-top: none; }',
+      {}, done);
+  });
   it('not change other CSS rules or border with value of 0', function (done) {
     test(
-      'div { display: flex; width: 100%; border-radius: 5px; border: 0; }',
-      'div { display: flex; width: 100%; border-radius: 5px; border: 0; }',
+      'div { display: flex; width: 100%; border-radius: 5px; }',
+      'div { display: flex; width: 100%; border-radius: 5px; }',
       {}, done);
   });
 });
