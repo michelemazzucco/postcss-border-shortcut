@@ -1,3 +1,6 @@
+# 0.0.5
+* Ignore `none` value in addition to `0`
+
 # 0.0.4
 * Ignore `border-collapse` and `border-spacing` properties
 

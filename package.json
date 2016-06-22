@@ -1,6 +1,6 @@
 {
   "name": "postcss-border-shortcut",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "PostCSS plugin for assign default border type if not expressed",
   "keywords": [
     "postcss",
