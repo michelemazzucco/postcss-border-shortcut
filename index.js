@@ -7,7 +7,7 @@ module.exports = postcss.plugin('postcss-border-shortcut', function (opts) {
   return function (css) {
     css.walkDecls( function (decl) {
       var borderRx = /^(?!.*(style|width|color|radius|collapse|spacing)).*border.*$/, // eslint-disable-line max-len
-          unitRx = /^(?!.*(px|rem|em|%)).*$/,
+          unitRx = /^(?!.*(px|rem|em|%|none)).*$/,
           valueList = postcss.list.space(decl.value),
           prop = decl.prop + ': ',
           firstValue = valueList[0],
