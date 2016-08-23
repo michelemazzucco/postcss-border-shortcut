@@ -9,22 +9,25 @@ module.exports = postcss.plugin('postcss-border-shortcut', function (opts) {
   opts = opts || {};
   var type = opts.borderType || 'solid';
 
-  return function (css) {
-    css.walkDecls( function (decl) {
-      var valueList = postcss.list.space(decl.value);
-      var prop = decl.prop + ': ';
-      var res = '';
+  function parseBorder(el) {
+    var value_list = postcss.list.space(el.value);
+    var prop = el.prop + ': ';
+    var result = '';
 
-
-      if (decl.prop.match(regex.type) && valueList[0].length >= 2) {
-        if (valueList.length === 1 && valueList[0].match(regex.color)) {
-          res = '1px ' + type + ' ' + valueList[0];
-          decl.replaceWith(prop + res);
-        } else if (valueList.length === 2) {
-          res = valueList[0] + ' ' + type + ' ' + valueList[1];
-          decl.replaceWith(prop + res);
-        }
+    if (value_list[0].length >= 2){
+      if (value_list.length === 1 && value_list[0].match(regex.color)) {
+        result = '1px ' + type + ' ' + value_list[0];
+        el.replaceWith(prop + result)
+      } else if (value_list.length === 2) {
+        result = value_list[0] + ' ' + type + ' ' + value_list[1];
+        el.replaceWith(prop + result)
       }
+    }
+  }
+
+  return function (css) {
+    css.walkDecls(regex.type, function(decl) {
+      parseBorder(decl)
     });
   };
 });
