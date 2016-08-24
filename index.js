@@ -1,9 +1,9 @@
 var postcss = require('postcss');
 
 var regex = {
-  type: /^(?!.*(style|width|color|radius|collapse|spacing)).*border.*$/,
+  bType: /^(?!.*(style|width|color|radius|collapse|spacing)).*border.*$/,
   color: /^(?!.*(px|rem|em|%|none)).*$/
-}
+};
 
 module.exports = postcss.plugin('postcss-border-shortcut', function (opts) {
   opts = opts || {};
@@ -11,12 +11,11 @@ module.exports = postcss.plugin('postcss-border-shortcut', function (opts) {
 
   function parseBorder(v, l) {
     var result = '';
-    var value_list = l;
 
-    if (value_list.length === 1 && value_list[0].match(regex.color)) {
-      result = '1px ' + type + ' ' + value_list[0];
-    } else if (value_list.length === 2) {
-      result = value_list[0] + ' ' + type + ' ' + value_list[1];
+    if (l.length === 1 && l[0].match(regex.color)) {
+      result = '1px ' + type + ' ' + l[0];
+    } else if (l.length === 2) {
+      result = l[0] + ' ' + type + ' ' + l[1];
     } else {
       result = v;
     }
@@ -26,16 +25,15 @@ module.exports = postcss.plugin('postcss-border-shortcut', function (opts) {
 
   function isBorder(d) {
     var value = d.value;
-    var value_prop = d.prop + ': ';
-    var value_list = postcss.list.space(value);
+    var valueList = postcss.list.space(value);
 
-    if (value_list[0].length >= 2) {
-      d.replaceWith(value_prop + parseBorder(value, value_list));
+    if (valueList[0].length >= 2) {
+      d.replaceWith(d.prop + ': ' + parseBorder(value, valueList));
     }
   }
 
   return function (css) {
-    css.walkDecls(regex.type, function (decl) {
+    css.walkDecls(regex.bType, function (decl) {
       isBorder(decl);
     });
   };
