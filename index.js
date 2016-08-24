@@ -29,8 +29,8 @@ module.exports = postcss.plugin('postcss-border-shortcut', function (opts) {
     var value_prop = d.prop + ': ';
     var value_list = postcss.list.space(value);
 
-    if (value_prop.match(regex.type) && value_list[0].length >= 2) {
-      d.replaceWith(prop + parseBorder(value, value_list));
+    if (value_list[0].length >= 2) {
+      d.replaceWith(value_prop + parseBorder(value, value_list));
     }
   }
 
