@@ -23,13 +23,13 @@ module.exports = postcss.plugin('postcss-border-shortcut', function (opts) {
     return result;
   }
 
-  return function (css) {
-    css.walkDecls(regex.bType, function (decl) {
+  return function (root) {
+    root.walkDecls(regex.bType, function (decl) {
       var value = decl.value;
       var valueList = postcss.list.space(value);
 
       if (valueList[0] !== '0') {
-        decl.replaceWith(decl.prop + ': ' + parseBorder(value, valueList));
+        decl.value = parseBorder(value, valueList);
       }
     });
   };
