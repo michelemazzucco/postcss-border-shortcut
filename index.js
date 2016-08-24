@@ -23,7 +23,7 @@ module.exports = postcss.plugin('postcss-border-shortcut', function (opts) {
     return result;
   }
 
-  function isBorder(d) {
+  function isParsable(d) {
     var value = d.value;
     var valueList = postcss.list.space(value);
 
@@ -34,7 +34,7 @@ module.exports = postcss.plugin('postcss-border-shortcut', function (opts) {
 
   return function (css) {
     css.walkDecls(regex.bType, function (decl) {
-      isBorder(decl);
+      isParsable(decl);
     });
   };
 });
