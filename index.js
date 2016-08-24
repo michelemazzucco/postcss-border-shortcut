@@ -23,18 +23,14 @@ module.exports = postcss.plugin('postcss-border-shortcut', function (opts) {
     return result;
   }
 
-  function isParsable(d) {
-    var value = d.value;
-    var valueList = postcss.list.space(value);
-
-    if (valueList[0] !== '0') {
-      d.replaceWith(d.prop + ': ' + parseBorder(value, valueList));
-    }
-  }
-
   return function (css) {
     css.walkDecls(regex.bType, function (decl) {
-      isParsable(decl);
+      var value = decl.value;
+      var valueList = postcss.list.space(value);
+
+      if (valueList[0] !== '0') {
+        decl.replaceWith(decl.prop + ': ' + parseBorder(value, valueList));
+      }
     });
   };
 });
