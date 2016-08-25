@@ -10,7 +10,7 @@ module.exports = postcss.plugin('postcss-border-shortcut', function (opts) {
   var type = opts.borderType || 'solid';
 
   function parseBorder(v, l) {
-    var result = '';
+    var result;
 
     if (l.length === 1 && l[0].match(regex.color)) {
       result = '1px ' + type + ' ' + l[0];
