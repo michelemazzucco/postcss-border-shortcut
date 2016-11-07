@@ -17,19 +17,18 @@
     "url": "https://github.com/michelemazzucco/postcss-border-shortcut/issues"
   },
   "scripts": {
-    "start": "mocha && eslint .",
-    "test": "mocha",
-    "lint": "eslint ."
+    "start": "ava -v && eslint *.js",
+    "test": "ava -v",
+    "lint": "eslint *.js"
   },
   "homepage": "https://github.com/michelemazzucco/postcss-border-shortcut",
   "dependencies": {
     "postcss": "^5.1.2"
   },
   "devDependencies": {
-    "chai": "^3.4.1",
+    "ava": "^0.16.0",
     "eslint": "^3.3.1",
-    "eslint-config-postcss": "^2.0.2",
-    "mocha": "^3.0.2"
+    "eslint-config-postcss": "^2.0.2"
   },
   "eslintConfig": {
     "extends": "eslint-config-postcss/es5"

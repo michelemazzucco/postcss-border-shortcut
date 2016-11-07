@@ -1,3 +1,6 @@
+# 0.1.0
+* Add Ava.js
+
 # 0.0.6
 * Code refactoring
 
