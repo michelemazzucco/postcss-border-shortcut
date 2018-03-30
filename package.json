@@ -23,11 +23,11 @@
   },
   "homepage": "https://github.com/michelemazzucco/postcss-border-shortcut",
   "dependencies": {
-    "postcss": "^5.1.2"
+    "postcss": "^6.0.21"
   },
   "devDependencies": {
-    "ava": "^0.16.0",
-    "eslint": "^3.3.1",
+    "ava": "^0.25.0",
+    "eslint": "^4.19.1",
     "eslint-config-postcss": "^2.0.2"
   },
   "eslintConfig": {

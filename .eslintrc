@@ -29,7 +29,7 @@
     "no-invalid-regexp":           [2],
     "no-negated-in-lhs":           [2],
     "constructor-super":           [2],
-    "no-nested-ternary":           [2],
+    "no-nested-ternary":           [0],
     "no-extend-native":            [2],
     "block-scoped-var":            [2],
     "no-control-regex":            [2],
@@ -116,11 +116,8 @@
     "no-new":                      [2],
     "quotes":                      [2, "single"],
     "indent":                      [2, 2, {"VariableDeclarator": 2}],
-    "semi":                        [2, "always"],
+    "semi":                        [2, "never"],
     "yoda":                        [2, "never"]
-  },
-  "ecmaFeatures": {
-    "modules": true
   },
   "env": {
     "node": true,
